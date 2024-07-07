@@ -130,9 +130,12 @@ const Signin: React.FC = () => {
       if (errors[key as keyof Errors]) {
         hasError = true;
       }
+      if (!touched[key as keyof FormData]) {
+    allFieldsTouched = false;
+  }
     });
 
-    if (hasError) {
+    if (hasError || !allFieldsTouched ) {
       //empty
     } else {
       localStorage.setItem("formData", JSON.stringify(formData));
