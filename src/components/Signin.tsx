@@ -126,6 +126,7 @@ const Signin: React.FC = () => {
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
     let hasError = false;
+    let  allFieldsTouched = true;
     Object.keys(errors).forEach((key) => {
       if (errors[key as keyof Errors]) {
         hasError = true;
